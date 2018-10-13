@@ -1,0 +1,49 @@
+{
+  "version": "0.0.0-development",
+  "name": "@telus/create-library",
+  "description": "an opinionated npm package initializer",
+  "author": "Ahmad Nassri <ahmad.nassri@telus.com>",
+  "contributors": [
+    "Kyle Spaans <kyle.spaans@telus.com>",
+    "Ruxandra Fediuc <ruxandra.fediuc@telus.com>"
+  ],
+  "homepage": "https://github.com/telus/create-library",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/telus/create-library.git"
+  },
+  "license": "MIT",
+  "bin": "index.js",
+  "keywords": [
+    "telus",
+    "init",
+    "npm",
+    "create",
+    "initializer"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "files": [
+    "lib",
+    "template",
+    "index.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/telus/create-library/issues"
+  },
+  "scripts": {
+    "lint:deps": "npx david --error404 --errorSCM --errorDepType",
+    "lint:ec": "npx editorconfig-checker .",
+    "lint:js": "npx eslint .",
+    "lint": "npx npm-run-all -p lint:*"
+  },
+  "dependencies": {
+    "fast-glob": "^2.2.3",
+    "inquirer": "^6.2.0",
+    "mkdirp": "^0.5.1",
+    "spdx-license-list": "^4.1.0",
+    "validate-npm-package-name": "^3.0.0",
+    "yargs": "^12.0.2"
+  }
+}

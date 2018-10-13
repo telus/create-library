@@ -1,0 +1,31 @@
+{
+  "version": "0.0.0-development",
+  "name": "@telus/[name]",
+  "description": "[description]",
+  "homepage": "https://github.com/telus/[name]",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/telus/[name].git"
+  },
+  "license": "[license]",
+  "main": "index.js",
+  "keywords": [keywords],
+  "engines": {
+    "node": ">=8"
+  },
+  "files": [
+    "lib",
+    "index.js"
+  ],
+  "bugs": {
+    "url": "https://github.com/telus/[name]/issues"
+  },
+  "scripts": {
+    "test": "npm run test:tap",
+    "test:tap": "tap test --100 --coverage-report=lcov --no-browser",
+    "coverage": "opener coverage/lcov-report/index.html"
+  },
+  "devDependencies": {
+    "tap": "^11.1.0"
+  }
+}
