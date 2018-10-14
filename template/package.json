@@ -21,9 +21,14 @@
     "url": "https://github.com/telus/[name]/issues"
   },
   "scripts": {
-    "test": "npm run test:tap",
+    "coverage": "opener coverage/lcov-report/index.html",
+    "lint:deps": "npx david --error404 --errorSCM --errorDepType",
+    "lint:ec": "npx editorconfig-checker .",
+    "lint:js": "npx eslint .",
+    "lint:node": "npx -p node-release-lines isnodesafe --ci",
+    "lint": "npx npm-run-all -p lint:*",
     "test:tap": "tap test --100 --coverage-report=lcov --no-browser",
-    "coverage": "opener coverage/lcov-report/index.html"
+    "test": "npm run test:tap"
   },
   "devDependencies": {
     "tap": "^11.1.0"
