@@ -32,8 +32,8 @@ branches:
       required_status_checks:
         strict: true
         contexts:
-          - 'ci/circleci: build',
-          - 'ci/circleci: lint',
+          - 'ci/circleci: build'
+          - 'ci/circleci: lint'
           - 'ci/circleci: unit'
 
       enforce_admins: true
