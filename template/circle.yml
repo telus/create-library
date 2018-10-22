@@ -48,7 +48,7 @@ jobs:
     executor: app
     steps:
       - attach
-      - run: npm run unit
+      - run: npm run test
 
   release:
     executor: app
