@@ -44,7 +44,7 @@ jobs:
       - attach
       - run: npm run lint
 
-  unit:
+  test:
     executor: app
     steps:
       - attach
@@ -67,12 +67,12 @@ workflows:
       - lint:
           requires: [ build ]
 
-      - unit:
+      - test:
           requires: [ build ]
 
       - release:
           context: npm-library
-          requires: [ build, lint, unit ]
+          requires: [ build, lint, test ]
           filters:
             branches:
               only: master
