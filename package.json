@@ -33,6 +33,7 @@
     "url": "https://github.com/telus/create-library/issues"
   },
   "scripts": {
+    "lint:audit": "npm audit",
     "lint:deps": "npx david --error404 --errorSCM --errorDepType",
     "lint:ec": "npx editorconfig-checker .",
     "lint:js": "npx eslint .",
