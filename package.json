@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "name": "@telus/create-library",
   "description": "an opinionated npm package initializer",
   "author": "Ahmad Nassri <ahmad.nassri@telus.com>",
