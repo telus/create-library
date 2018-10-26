@@ -23,7 +23,7 @@
   "scripts": {
     "coverage": "opener coverage/lcov-report/index.html",
     "lint:audit": "npm audit",
-    "lint:deps": "npx david --error404 --errorSCM --errorDepType",
+    "lint:deps": "npx updated",
     "lint:ec": "npx editorconfig-checker .",
     "lint:js": "npx eslint .",
     "lint:node": "npx -p node-release-lines isnodesafe --ci",
