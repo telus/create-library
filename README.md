@@ -2,7 +2,8 @@
 
 [![version][npm-image]][npm-url] [![Build Status][circle-image]][circle-url]
 
-> an opinionated [npm package initializer][npm/init]
+> an opinionated [npm package initializer][npm/init]  
+> scaffolds an npm library tree with fully configured CI automation, using a predefined [template](./template)
 
 ## Requirements
 
@@ -34,3 +35,4 @@ npm init @telus/library
 [npm-image]: https://img.shields.io/npm/v/@telus/create-library.svg?style=for-the-badge&logo=npm
 
 [npm/init]: https://docs.npmjs.com/cli/init#description
+
