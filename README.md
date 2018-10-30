@@ -18,10 +18,10 @@ npm init @telus/library
 
 ## How does this work?
 
-> _`npm init <initializer>` can be used to set up a new or existing npm package._
-
-> _`initializer` in this case is an npm package named `create-<initializer>`, which will be installed by `npx`, and then have its main bin executed -- presumably creating or updating `package.json` and running any other initialization-related operations._
-
+> _`npm init <initializer>` can be used to set up a new or existing npm package._  
+>
+> _`initializer` in this case is an npm package named `create-<initializer>`, which will be installed by `npx`, and then have its main bin executed -- presumably creating or updating `package.json` and running any other initialization-related operations._  
+>
 > _[&mdash; Source: `docs.npmjs.com`][npm/init]_
 
 ---
@@ -35,4 +35,3 @@ npm init @telus/library
 [npm-image]: https://img.shields.io/npm/v/@telus/create-library.svg?style=for-the-badge&logo=npm
 
 [npm/init]: https://docs.npmjs.com/cli/init#description
-
