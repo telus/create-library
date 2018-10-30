@@ -5,7 +5,7 @@ executors:
     working_directory: ~/src
 
     docker:
-      - image: telusops/build-essential:latest
+      - image: telus/build-essential
 
 commands:
   persist:
