@@ -37,6 +37,7 @@
     "lint:deps": "npx updated",
     "lint:ec": "npx editorconfig-checker .",
     "lint:js": "npx eslint .",
+    "lint:md": "npx remark --quiet --frail .",
     "lint:node": "npx -p node-release-lines isnodesafe --ci",
     "lint": "npx npm-run-all -p lint:*"
   },
