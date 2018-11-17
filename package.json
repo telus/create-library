@@ -41,10 +41,10 @@
     "lint": "npx npm-run-all -p lint:*"
   },
   "dependencies": {
-    "fast-glob": "^2.2.3",
+    "fast-glob": "^2.2.4",
     "inquirer": "^6.2.0",
     "mkdirp": "^0.5.1",
-    "spdx-license-list": "^4.1.0",
+    "spdx-license-list": "^5.0.0",
     "validate-npm-package-name": "^3.0.0",
     "yargs": "^12.0.2"
   }
