@@ -8,6 +8,14 @@ executors:
       - image: telus/build-essential
 
 commands:
+  ssh:
+    steps:
+      - add_ssh_keys
+      - run:
+          name: Add github.com to known hosts
+          command: |
+            mkdir ~/.ssh
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
   persist:
     steps:
       - persist_to_workspace: { root: ~/src, paths: . }
@@ -40,6 +48,7 @@ jobs:
     executor: app
     steps:
       - attach
+      - ssh
       - run: npx semantic-release
 
 workflows:
