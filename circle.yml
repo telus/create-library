@@ -34,6 +34,7 @@ jobs:
   build:
     executor: app
     steps:
+      - ssh
       - checkout
       - install
       - persist
