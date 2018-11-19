@@ -28,6 +28,7 @@
     "lint:js": "npx eslint .",
     "lint:md": "npx remark --quiet --frail .",
     "lint": "npx npm-run-all -p lint:*",
+    "setup-local": "npx install-group peer --package @telus/build-essential --no-save",
     "test:tap": "tap test --100 --coverage-report=lcov --no-browser",
     "test": "npm run test:tap"
   },
