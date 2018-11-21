@@ -1,9 +1,10 @@
 #!/usr/bin/env node
+
 const { join } = require('path')
-const template = require('./lib/template')
 const yargs = require('yargs')
 
-const pkg = require(join(__dirname, 'package.json'))
+const pkg = require(join(__dirname, 'package.json')) // eslint-disable-line import/no-dynamic-require
+const template = require('./lib/template')
 
 const builder = () => {
   yargs.positional('path', {

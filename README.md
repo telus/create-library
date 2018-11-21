@@ -32,7 +32,7 @@ This NPM library initializer is a CLI tool that makes the process of creating an
 
 Some of the tools mentioned above rely on centralized configuration files, that allow us to achieve consistency across all of the applications built by our team, and remove duplicated configs across all of our repositories. You are welcome to open a PR in either of these if you would like to suggest any changes:
 - `eslint` (Javascript linting) - see [@telus/eslint-config][telus/eslint-config]
-- `remark-cli` (Markdown linting) - see [@telus/remark-preset-lint-markdown][telus/remark-preset-lint-markdown]
+- `remark` (Markdown linting) - see [@telus/remark-config][telus/remark-config]
 - `semantic-release` (automated version management and NPM publishing) - see [@telus/semantic-release-config][telus/semantic-release-config]
 
 ## <a id="step-3"></a> Usage
@@ -97,7 +97,7 @@ If you are thinking of bringing these updates into an existing NPM library, and 
 [remark-cli]: https://github.com/remarkjs/remark/tree/master/packages/remark-cli
 [renovate]: https://github.com/renovatebot/renovate
 [telus/eslint-config]: https://github.com/telus/eslint-config
-[telus/remark-preset-lint-markdown]: https://github.com/telus/remark-preset-lint-markdown
+[telus/remark-config]: https://github.com/telus/remark-config
 [telus/semantic-release-config]: https://github.com/telus/semantic-release-config
 [github-licenses]: https://help.github.com/articles/licensing-a-repository/
 [npm-init]: https://docs.npmjs.com/cli/init#description
