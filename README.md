@@ -24,10 +24,10 @@ This NPM library initializer is a CLI tool that makes the process of creating an
 - Automated version management and NPM package publishing using [semantic-release][semantic-release], that uses formalized commit message convention to document changes in the codebase
 - Basic setup for unit tests with [tap][tap]
 - Security auditing using [npm audit][npm-audit]
-- Dependencies auditing using [updated][updated]
+- Dependencies auditing using [updated][updated], and a command to automatically install updates
 - `.editorconfig` linting using [editorconfig-checker][editorconfig]
-- Javascript linting using [eslint][eslint]
-- Markdown linting for your README files using [remark-cli][remark-cli]
+- Javascript linting using [eslint][eslint], and a command to automatically fix most small issues
+- Markdown linting for your README files using [remark-cli][remark-cli], and a command to automatically fix most small issues
 - Automated dependency updates using [renovate bot][renovate]
 
 Some of the tools mentioned above rely on centralized configuration files, that allow us to achieve consistency across all of the applications built by our team, and remove duplicated configs across all of our repositories. You are welcome to open a PR in either of these if you would like to suggest any changes:
