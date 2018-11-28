@@ -38,7 +38,7 @@
     "lint:ec": "npx editorconfig-checker .",
     "lint:js": "npx eslint .",
     "lint:md": "npx remark --quiet --frail .",
-    "lint": "npx npm-run-all -p lint:*"
+    "lint": "npx npm-run-all -p -c -l lint:*"
   },
   "dependencies": {
     "fast-glob": "^2.2.4",

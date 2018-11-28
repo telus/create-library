@@ -27,7 +27,7 @@
     "lint:ec": "npx editorconfig-checker .",
     "lint:js": "npx eslint .",
     "lint:md": "npx remark --quiet --frail .",
-    "lint": "npx npm-run-all -p lint:*",
+    "lint": "npx npm-run-all -p -c -l lint:*",
     "setup-local": "npx install-group peer --package @telus/build-essential --no-save",
     "fix:js": "npm run lint:js -- --fix",
     "fix:md": "npm run lint:md -- -o",
