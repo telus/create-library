@@ -41,6 +41,13 @@ Some of the tools mentioned above rely on centralized configuration files, that 
 npm init @telus/library
 ```
 
+
+
+
+***** banana
+
+
+
 When you run `npm init @telus/library`, you will be prompted with a few questions. Here's what you need to know to be ready:
 - if your project will be open source (Y/N)
 - project title
