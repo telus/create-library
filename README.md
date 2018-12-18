@@ -9,6 +9,7 @@ An opinionated [npm package initializer][npm-init]. Scaffolds an npm library tre
 - [Usage](#step-3)
 - [Local development gotchas](#step-4)
 - [How do I migrate existing libraries?](#step-5)
+- [Guides](#step-6)
 
 ## <a id="step-1"></a> Requirements
 
@@ -77,6 +78,12 @@ If you are thinking of bringing these updates into an existing NPM library, and 
 - Pay special attention to `package.json` and your `README` files, as these will be completely replaced; however, you'll want to merge what you had in there before with what gets generated.
 - If you run into any issues, reach out to the [Architecture Support Team][ast-confluence].
 
+## <a id="step-6"></a> Guides
+
+For more information about how these work and how they were configured, please refer to the documentation below:
+- [CircleCI][guides-circle-ci]
+- [semantic-release][guides-semantic-release]
+
 ---
 > Github: [@telus](https://github.com/telus) &bull;
 > Twitter: [@telusdigital](https://twitter.com/telusdigital)
@@ -102,3 +109,6 @@ If you are thinking of bringing these updates into an existing NPM library, and 
 [github-licenses]: https://help.github.com/articles/licensing-a-repository/
 [npm-init]: https://docs.npmjs.com/cli/init#description
 [ast-confluence]: https://telusdigital.atlassian.net/wiki/spaces/AST/overview
+
+[guides-circle-ci]: https://github.com/telus/guides/blob/master/circle-ci.md
+[guides-semantic-release]: https://github.com/telus/guides/blob/master/semantic-release.md
