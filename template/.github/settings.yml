@@ -14,6 +14,8 @@ repository:
   allow_rebase_merge: true
 
 teams:
+  - name: telus
+    permission: write
   - name: [team]
     permission: admin
 
@@ -31,10 +33,6 @@ branches:
 
       required_status_checks:
         strict: true
-        contexts:
-          - 'ci/circleci: build'
-          - 'ci/circleci: lint'
-          - 'ci/circleci: unit'
 
       enforce_admins: true
 
