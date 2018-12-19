@@ -39,6 +39,8 @@ Some of the tools mentioned above rely on centralized configuration files, that 
 ## <a id="step-3"></a> Usage
 
 ```bash
+mkdir my-new-project
+cd my-new-project
 npm init @telus/library
 ```
 
