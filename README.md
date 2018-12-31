@@ -53,6 +53,12 @@ When you run `npm init @telus/library`, you will be prompted with a few question
 - keywords
 - maintainers (Github team slug)
 
+Once you have scaffolded you library files and pushed them to a repository, you can set up your new repository with CircleCI so that it runs the configured pipeline for every push.
+
+To do that, go to [Circle CI][circle-ci-telus] and login with your Github account. Once logged in, you should be able to access the `Add projects` page, where you can search for your repository and click on `Set Up project`. In the next step, CircleCI will try to determine what OS and language your app needs (Linux/Node should be correct for most of our apps) and suggest you how to write your configuration file. Remember we already have [that](./template/circle.yml) among our scaffolded files, so just click on `Start building`. 
+
+Once you have clicked on `Start building`, CircleCI will try to identify your config file and run the pipeline accordingly in your `master` branch. If no config file is found in the `master` branch, you'll see an error. However, once you make a new push to any branch and a valid config file is detected, you will see the pipeline run.
+
 ### What's this `npm init` magic?
 
 The `npm init` command was solely used to create a new `package.json` file. As of npm v6.1.0, `npm init` can be used as an initializer by passing the name of the package you want initialized after `npm init`; npm will prepend `create-` to the name of the initializer you provide and use `npx` to temporarily install and execute that project. You can read more about this [here][npm-init].
@@ -109,6 +115,7 @@ For more information about how these work and how they were configured, please r
 [telus/remark-config]: https://github.com/telus/remark-config
 [telus/semantic-release-config]: https://github.com/telus/semantic-release-config
 [github-licenses]: https://help.github.com/articles/licensing-a-repository/
+[circle-ci-telus]: https://circleci.com/add-projects/gh/telus
 [npm-init]: https://docs.npmjs.com/cli/init#description
 [ast-confluence]: https://telusdigital.atlassian.net/wiki/spaces/AST/overview
 
