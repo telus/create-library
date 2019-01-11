@@ -37,6 +37,6 @@
     "test": "npm run test:tap"
   },
   "devDependencies": {
-    "tap": "^11.1.0"
+    "tap": "^12.1.1"
   }
 }
