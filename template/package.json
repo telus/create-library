@@ -32,6 +32,7 @@
     "fix:js": "npm run lint:js -- --fix",
     "fix:md": "npm run lint:md -- -o",
     "fix:deps": "npm run lint:deps -- --update",
+    "prepare": "node checkPackageScope.js",
     "test:tap": "tap test --100 --coverage-report=lcov --no-browser",
     "test": "npm run test:tap"
   },
