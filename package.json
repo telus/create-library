@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "fast-glob": "^2.2.6",
-    "inquirer": "^6.2.1",
+    "inquirer": "^6.2.2",
     "mkdirp": "^0.5.1",
     "spdx-license-list": "^5.0.0",
     "validate-npm-package-name": "^3.0.0",
