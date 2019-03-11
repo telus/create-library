@@ -1,0 +1,24 @@
+version: 2.1
+orbs:
+  build: 'telus/build@3.4.1'
+  node: 'telus/node@3.4.1'
+workflows:
+  version: 2
+  default:
+    jobs:
+      - build/clone
+      - node/setup:
+          requires: [ 'build/clone' ]
+          context: 'telus-release'
+      - node/install:
+          requires: [ 'node/setup' ]
+      - node/lint:
+          requires: [ 'node/install' ]
+      - build/releasedryrun:
+          filters: { branches: { ignore: 'master' } }
+          requires: [ 'node/lint' ]
+          context: 'telus-release'
+      - build/release:
+          filters: { branches: { only: 'master' } }
+          requires: [ 'node/lint' ]
+          context: 'telus-release'
