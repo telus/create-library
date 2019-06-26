@@ -36,16 +36,21 @@
     "lint:audit": "npm audit",
     "lint:deps": "npx updated",
     "lint:ec": "npx editorconfig-checker .",
-    "lint:js": "npx eslint .",
+    "lint:js": "npx telus/telus-standard --verbose",
     "lint:md": "npx remark --quiet --frail .",
     "lint": "npx npm-run-all -p -c -l lint:*"
   },
   "dependencies": {
-    "fast-glob": "^2.2.6",
-    "inquirer": "^6.3.1",
+    "fast-glob": "^3.0.2",
+    "inquirer": "^6.4.1",
     "mkdirp": "^0.5.1",
     "spdx-license-list": "^6.0.0",
     "validate-npm-package-name": "^3.0.0",
-    "yargs": "^13.2.2"
+    "yargs": "^13.2.4"
+  },
+  "telus-standard": {
+    "ignore": [
+      "template/"
+    ]
   }
 }
