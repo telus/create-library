@@ -25,7 +25,8 @@ Here are some of the principles and concepts we have based this on:
 - Given this, we encourage implementing _branch protection for the `master` branch_ and merging changes into it following a pull request process, with at least one approval required. Having the unit tests and lint checks run in the CI pipeline automatically allows the PR reviewers to focus on the actual code changes, without having to always pull the respective branch locally to confirm no issues are introduced.
 - Automation of the package release workflow is made possible by following _formalized git commit conventions_, more specifically [angular-commit-conventions][angular-commit-conventions]. This removes the immediate connection between human emotions and version numbers, strictly following the Semantic Versioning specs. Please refer to our [semantic-release][guides-semantic-release] guide for more details about how this works.
 - We are fans of _configuration as code_, which is why we are taking advantage of Github's [Probot][probot-settings] framework to store the repository settings as [code](./.github/settings.yml). Please review these and configure as needed. We encourage the practice of squashing commits and keeping a clean commit history (without standard merge commits cluttering the history). If squashing commits is a practice your team chooses to use, you will have the responsibility to ensure that the squashed commit message follows the Angular commit conventions and captures all included changes correctly.
-- We believe there is a lot of value in having _consistent code style_ across all of our projects, which is why we have centralized the configuration of our code quality and style checking tools in external libraries, such as [@telus/eslint-config][telus/eslint-config], [@telus/remark-config][telus/remark-config], etc. We encourage teams to use our centralized config packages and not override particular rules; our configuration is open to suggestions to contributions (feel free to add issues and/or open PRs in the repositories of the above mentioned packages).
+- We believe there is a lot of value in having _consistent code style_ across all of our projects, which is why we have centralized the configuration of our code quality and style checking tools in external libraries, such as [@telus/telus-standard][telus/telus-standard], [@telus/remark-config][telus/remark-config], etc. We encourage teams to use our centralized config packages and not override particular rules; our configuration is open to suggestions to contributions (feel free to add issues and/or open PRs in the repositories of the above mentioned packages).
+- We believe in automation and in _leveraging automated code formatters_ such as [prettier][prettier]. The scaffolded library will be configured out of the box to automatically format all the staged files when the user commits. For that, we are using [husky][husky] and [lint-staged][lint-staged] to configure the pre-commit hook and restrict the formatting to the staged files that are part of the commit.
 - We believe in _simplification and noise reduction_. For this reason, we have configured the CI pipeline to have access to these common tools (linting, releasing, etc.) and their associated centralized configs, and have consciously omitted those from the list of dependencies in `package.json`. If you would like to be able to run the CI jobs locally (unit tests, linting, etc.), you will have to have these peer dependencies installed. Please refer to [Local development gotchas](#step-4) for more details.
 
 ## <a id="step-1"></a> Requirements
@@ -51,7 +52,7 @@ This NPM library initializer is a CLI tool that makes the process of creating an
 
 Some of the tools mentioned above rely on centralized configuration files, that allow us to achieve consistency across all of the applications built by our team, and remove duplicated configs across all of our repositories. You are welcome to open a PR in either of these if you would like to suggest any changes:
 
-- `eslint` (Javascript linting) - see [@telus/eslint-config][telus/eslint-config]
+- `telus-standard` (Javascript linting with our own flavour of StandardJS) - see [@telus/telus-standard][telus/telus-standard]
 - `remark` (Markdown linting) - see [@telus/remark-config][telus/remark-config]
 - `semantic-release` (automated version management and NPM publishing) - see [@telus/semantic-release-config][telus/semantic-release-config]
 
@@ -141,7 +142,7 @@ But of course! Have a look at this [guide][circleci-slack] for instructions on h
 
 ### 7. I keep getting errors on my local when I run `npm run lint`
 
-Example: `Error: Cannot find module '@telus/eslint-config'` or `Error: Cannot find module '@telus/remark-config'`.
+Example: `Error: Cannot find module '@telus/remark-config'`.
 
 You probably missed the part where we talked about our centralized config packages. Have a look at [Local development gotchas](#step-4).
 
@@ -172,8 +173,11 @@ Before you start using this initializer and the tools inside it, **please make s
 [eslint]: https://github.com/eslint/eslint
 [remark-cli]: https://github.com/remarkjs/remark/tree/master/packages/remark-cli
 [renovate]: https://github.com/renovatebot/renovate
-[telus/eslint-config]: https://github.com/telus/eslint-config
+[telus/telus-standard]: https://github.com/telus/telus-standard
 [telus/remark-config]: https://github.com/telus/remark-config
+[prettier]: https://prettier.io/
+[husky]: https://github.com/typicode/husky
+[lint-staged]: https://github.com/okonet/lint-staged
 [telus/semantic-release-config]: https://github.com/telus/semantic-release-config
 [github-licenses]: https://help.github.com/articles/licensing-a-repository/
 [circle-ci-telus]: https://circleci.com/add-projects/gh/telus
