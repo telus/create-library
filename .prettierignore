@@ -1,0 +1,8 @@
+*.*~
+*.log
+.DS_Store
+.idea
+.npmrc
+coverage
+node_modules
+template

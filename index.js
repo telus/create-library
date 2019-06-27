@@ -17,5 +17,4 @@ const builder = () => {
 /* eslint-disable no-unused-expressions */
 yargs
   .version('template-version', 'Show version number', pkg.version)
-  .command('$0 [path]', 'initiate a new project', builder, template)
-  .argv
+  .command('$0 [path]', 'initiate a new project', builder, template).argv

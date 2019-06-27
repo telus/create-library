@@ -11,12 +11,14 @@ npm install @telus/[name]
 ```
 
 For local development, also run:
+
 ```bash
 npm run setup-local
 ```
 
 ---
-> Github: [@telus](https://github.com/telus) &bull; 
+
+> Github: [@telus](https://github.com/telus) &bull;
 > Twitter: [@telusdigital](https://twitter.com/telusdigital)
 
 [circle-url]: https://circleci.com/gh/telus/[name]
