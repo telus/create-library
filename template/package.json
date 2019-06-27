@@ -25,17 +25,22 @@
     "lint:audit": "npm audit",
     "lint:deps": "npx updated",
     "lint:ec": "npx editorconfig-checker .",
-    "lint:js": "npx telus/telus-standard --verbose",
+    "lint:js": "telus-standard --verbose",
     "lint:md": "npx remark --quiet --frail .",
     "lint": "npx npm-run-all -p -c -l lint:*",
     "setup-local": "npx install-group peer --package @telus/build-essential --no-save",
     "fix:js": "npm run lint:js -- --fix",
     "fix:md": "npm run lint:md -- -o",
+    "format": "prettier '**/**.+(js|jsx|json|yml|yaml|css|less|scss|md|graphql|mdx)' --write",
     "fix:deps": "npm run lint:deps -- --update",
     "test:tap": "tap test --100 --coverage-report=lcov --no-browser",
     "test": "npm run test:tap"
   },
   "devDependencies": {
-    "tap": "^12.6.1"
+    "@telus/prettier-config": "^1.0.3",
+    "@telus/telus-standard": "^1.2.1",
+    "husky": "^2.7.0",
+    "lint-staged": "^8.2.1",
+    "tap": "^14.3.1"
   }
 }

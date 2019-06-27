@@ -22,7 +22,7 @@ commands:
 
   attach:
     steps:
-      - attach_workspace: { at: "." }
+      - attach_workspace: { at: '.' }
 
   npmrc:
     steps:
@@ -77,14 +77,14 @@ workflows:
 
       - lint:
           context: npm-library
-          requires: [ build ]
+          requires: [build]
 
       - unit:
-          requires: [ build ]
+          requires: [build]
 
       - release:
           context: npm-library
-          requires: [ build, lint, unit ]
+          requires: [build, lint, unit]
           filters:
             branches:
               only: master

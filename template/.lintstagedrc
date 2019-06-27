@@ -1,0 +1,6 @@
+{
+  linters: {
+    "*.{js,jsx,json,yml,yaml,css,less,scss,md,graphql,mdx}": "npm run format",
+  },
+  "ignore": ["*.min.js", "*.log"]
+}
