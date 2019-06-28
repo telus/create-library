@@ -34,11 +34,14 @@
     "format": "prettier '**/**.+(js|jsx|json|yml|yaml|css|less|scss|md|graphql|mdx)' --write",
     "fix:deps": "npm run lint:deps -- --update",
     "test:tap": "tap test --100 --coverage-report=lcov --no-browser",
-    "test": "npm run test:tap"
+    "test": "npm run test:tap",
+    "release:dryrun": "npx semantic-release --dry-run --branch $(git describe --contains --all HEAD)",
+    "release": "npx semantic-release"
   },
   "devDependencies": {
     "@telus/prettier-config": "^1.0.3",
     "@telus/telus-standard": "^1.2.1",
+    "@telus/remark-config": "^1.2.0",
     "husky": "^2.7.0",
     "lint-staged": "^8.2.1",
     "tap": "^14.3.1"
