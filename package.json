@@ -37,7 +37,7 @@
     "lint:deps": "npx updated",
     "lint:ec": "npx editorconfig-checker .",
     "lint:js": "telus-standard --verbose",
-    "lint:md": "npx remark --quiet --frail .",
+    "lint:md": "npx remark-cli --quiet --frail .",
     "lint": "npx npm-run-all -p -c -l lint:*",
     "fix:js": "npm run lint:js -- --fix",
     "format": "prettier '{,!(template)/**/}*.+(js|jsx|json|yml|yaml|css|less|scss|md|graphql|mdx)' --write",
