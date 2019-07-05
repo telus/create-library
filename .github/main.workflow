@@ -1,6 +1,6 @@
 workflow "Build, test, lint, release" {
   on = "push"
-  resolves = ["semantic-release"]
+  resolves = ["npm run release"]
 }
 
 action "npm ci" {
@@ -20,30 +20,30 @@ action "npm run test" {
   args = "run test"
 }
 
-action "semantic-release dryrun" {
+action "npm run release:dryrun" {
   needs = [
     "npm run lint",
     "npm run test"
   ]
   uses = "actions/npm@master"
   args = "run release:dryrun"
-  secrets = ["GH_TOKEN", "NPM_TOKEN"]
+  secrets = ["GITHUB_TOKEN", "NPM_TOKEN"]
 }
 
 # Filter for master branch
 action "master branch only" {
   needs = [
-    "semantic-release dryrun"
+    "npm run release:dryrun"
   ]
   uses = "actions/bin/filter@master"
   args = "branch master"
 }
 
-action "semantic-release" {
+action "npm run release" {
   needs = [
     "master branch only"
   ]
   uses = "actions/npm@master"
   args = "run release"
-  secrets = ["GH_TOKEN", "NPM_TOKEN"]
+  secrets = ["GITHUB_TOKEN", "NPM_TOKEN"]
 }

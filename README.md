@@ -77,14 +77,9 @@ When you run `npm init @telus/library`, you will be prompted with a few question
 - keywords
 - maintainers (Github team slug)
 
-Once you have scaffolded you library files and pushed them to a repository, **you have to set up the Github Actions workflow with the right tokens**, so that it runs for every push:
+Once you have scaffolded you library files and pushed them to a repository, **you have to set up the `NPM_TOKEN` inside the Github Actions workflow**, so that the workflow can automatically version and release your package to the NPM registry for you. Use the shared NPM token available in Vault (`shippy get secret npmrc-dev --common --field=npmrc`). Keep in mind that this token will sometimes get updated & you will have to update it here as well, in case you notice the workflow failing.
 
-- `GH_TOKEN`: You need a Github token with write permissions (`repo` scope) so that the workflow can automatically tag releases and push them back to Github. To generate a token, follow the instructions available [here][generate-gh-token] and make sure you select the `repo` scope & permissions. Save this token in safe place temporarily.
-- `NPM_TOKEN`: You need an NPM token with publish access, so that the Github Actions workflow can also automatically version and release your package to the NPM registry for you. Use the shared NPM token available in Vault (`shippy get secret npmrc-dev --common --field=npmrc`). Keep in mind that this token will sometimes get updated & you will have to update it here as well, in case you notice the workflow failing.
-
-Once you have both tokens at hand, you need to add them to the Github Actions workflow setup, using the Github UI. Customize the URL below to point to your repository: `https://github.com/telus/<repository-name>/edit/master/.github/main.workflow`.
-
-Have a look at the steps in the workflow. Notice the ones that have the secrets associated to them, and click on `edit` and `Enter value` to insert your tokens.
+Once you have the token at hand, you need to add it to the Github Actions workflow setup, using the Github UI. Customize the URL below to point to your repository: `https://github.com/telus/<repository-name>/edit/master/.github/main.workflow`. Have a look at the steps in the workflow. Notice the ones that have the secrets associated to them, and click on `edit` and `Enter value` to insert your token.
 
 ### What's this `npm init` magic?
 
@@ -172,4 +167,3 @@ Before you start using this initializer and the tools inside it, **please make s
 [npm-files]: https://docs.npmjs.com/files/package.json#files
 [guides-semantic-release]: https://github.com/telus/guides/blob/master/semantic-release.md
 [github-actions]: https://developer.github.com/actions/
-[generate-gh-token]: https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line#creating-a-token
