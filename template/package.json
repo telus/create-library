@@ -26,21 +26,23 @@
     "lint:deps": "npx updated",
     "lint:ec": "npx editorconfig-checker .",
     "lint:js": "telus-standard --verbose",
-    "lint:md": "npx remark --quiet --frail .",
+    "lint:md": "npx remark-cli --quiet --frail .",
     "lint": "npx npm-run-all -p -c -l lint:*",
-    "setup-local": "npx install-group peer --package @telus/build-essential --no-save",
     "fix:js": "npm run lint:js -- --fix",
     "fix:md": "npm run lint:md -- -o",
     "format": "prettier '**/**.+(js|jsx|json|yml|yaml|css|less|scss|md|graphql|mdx)' --write",
     "fix:deps": "npm run lint:deps -- --update",
     "test:tap": "tap test --100 --coverage-report=lcov --no-browser",
-    "test": "npm run test:tap"
+    "test": "npm run test:tap",
+    "release:dryrun": "npx semantic-release --dry-run --branch $(git describe --contains --all HEAD)",
+    "release": "npx semantic-release"
   },
   "devDependencies": {
     "@telus/prettier-config": "^1.0.3",
     "@telus/telus-standard": "^1.2.1",
-    "husky": "^2.7.0",
-    "lint-staged": "^8.2.1",
+    "@telus/remark-config": "^1.2.0",
+    "husky": "^3.0.0",
+    "lint-staged": "^9.0.2",
     "tap": "^14.3.1"
   }
 }

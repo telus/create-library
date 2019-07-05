@@ -1,6 +1,6 @@
 # NPM Library Initializer
 
-[![version][npm-image]][npm-url] [![Build Status][circle-image]][circle-url]
+[![version][npm-image]][npm-url]
 
 An opinionated [npm package initializer][npm-init]. Scaffolds an npm library tree with fully configured CI automation, using a predefined [template](./template).
 
@@ -10,24 +10,22 @@ Use this to easily scaffold an NPM package for use within TELUS.
 - [Requirements](#step-1)
 - [What's included](#step-2)
 - [Usage](#step-3)
-- [Local development gotchas](#step-4)
-- [Frequently Asked Questions](#step-5)
-- [Additional guides](#step-6)
+- [Frequently Asked Questions](#step-4)
+- [Additional guides](#step-5)
 
 ## <a id="step-0"></a> Why and when should I use this?
 
-The present NPM library initializer was created as a replacement to [npm-library-starter-kit][npm-library-starter-kit] and as part of our effort to migrate our projects to use [CircleCI][guides-circle-ci]. This starter kit is opinionated, and it is meant to encourage a good set of practices, but it is also flexible from a configuration point of view. We encourage teams to use the tools we have included in the template for setting up a solid and reliable pipeline that will allow for a good developer workflow and collaboration process. You are free to remove and/or add additional jobs or steps in your pipeline if that makes sense for your project and team.
+The present NPM library initializer was created as a replacement to [npm-library-starter-kit][npm-library-starter-kit]. This starter kit is opinionated, and it is meant to encourage a good set of practices, but it is also flexible from a configuration point of view. We encourage teams to use the tools we have included in the template for setting up a solid and reliable pipeline that will allow for a good developer workflow and collaboration process. You are free to remove and/or add additional jobs or steps in your pipeline if that makes sense for your project and team.
 
 Here are some of the principles and concepts we have based this on:
 
-- We use Git _feature branches_, which allow us to isolate the development work and instantly get feedback as to how the changes impact the the unit tests and lint checks (using CircleCI and Github integrated status checks).
+- We use Git _feature branches_, which allow us to isolate the development work and instantly get feedback as to how the changes impact the the unit tests and lint checks (using Github actions and integrated status checks).
 - We believe in _the power of automation_, which is why we have opted for automated semantic versioning and releasing using [semantic-release][semantic-release]. The template pipeline is configured to only run the `release` step on the `master` branch, which is why it is vital that only good code gets pushed to it.
 - Given this, we encourage implementing _branch protection for the `master` branch_ and merging changes into it following a pull request process, with at least one approval required. Having the unit tests and lint checks run in the CI pipeline automatically allows the PR reviewers to focus on the actual code changes, without having to always pull the respective branch locally to confirm no issues are introduced.
 - Automation of the package release workflow is made possible by following _formalized git commit conventions_, more specifically [angular-commit-conventions][angular-commit-conventions]. This removes the immediate connection between human emotions and version numbers, strictly following the Semantic Versioning specs. Please refer to our [semantic-release][guides-semantic-release] guide for more details about how this works.
 - We are fans of _configuration as code_, which is why we are taking advantage of Github's [Probot][probot-settings] framework to store the repository settings as [code](./.github/settings.yml). Please review these and configure as needed. We encourage the practice of squashing commits and keeping a clean commit history (without standard merge commits cluttering the history). If squashing commits is a practice your team chooses to use, you will have the responsibility to ensure that the squashed commit message follows the Angular commit conventions and captures all included changes correctly.
 - We believe there is a lot of value in having _consistent code style_ across all of our projects, which is why we have centralized the configuration of our code quality and style checking tools in external libraries, such as [@telus/telus-standard][telus/telus-standard], [@telus/remark-config][telus/remark-config], etc. We encourage teams to use our centralized config packages and not override particular rules; our configuration is open to suggestions to contributions (feel free to add issues and/or open PRs in the repositories of the above mentioned packages).
 - We believe in automation and in _leveraging automated code formatters_ such as [prettier][prettier]. The scaffolded library will be configured out of the box to automatically format all the staged files when the user commits. For that, we are using [husky][husky] and [lint-staged][lint-staged] to configure the pre-commit hook and restrict the formatting to the staged files that are part of the commit.
-- We believe in _simplification and noise reduction_. For this reason, we have configured the CI pipeline to have access to these common tools (linting, releasing, etc.) and their associated centralized configs, and have consciously omitted those from the list of dependencies in `package.json`. If you would like to be able to run the CI jobs locally (unit tests, linting, etc.), you will have to have these peer dependencies installed. Please refer to [Local development gotchas](#step-4) for more details.
 
 ## <a id="step-1"></a> Requirements
 
@@ -40,13 +38,13 @@ This NPM library initializer is a CLI tool that makes the process of creating an
 
 - Scaffolded NPM library, with automatically generated `package.json` and Github settings based on user input
 - Github repository settings as code living in the repository of your library (see [probot/settings][probot-settings] for more details)
-- CircleCI [configuration file](./template/circle.yml) for a standard pipeline, including the following jobs: `build`, `lint`, `test`, and `release`
+- Github Actions [configuration file](./template/.github/main.workflow) for a standard workflow, including installing dependencies, testing, linting, and automated releases
 - Automated version management and NPM package publishing using [semantic-release][semantic-release], that uses formalized commit message convention to document changes in the codebase
 - Basic setup for unit tests with [tap][tap]
 - Security auditing using [npm audit][npm-audit]
 - Dependencies auditing using [updated][updated], and a command to automatically install updates
 - `.editorconfig` linting using [editorconfig-checker][editorconfig]
-- Javascript linting using [eslint][eslint], and a command to automatically fix most small issues
+- Javascript linting using [telus-standard][telus-standard], and a command to automatically fix most small issues
 - Markdown linting for your README files using [remark-cli][remark-cli], and a command to automatically fix most small issues
 - Automated dependency updates using [renovate bot][renovate]
 
@@ -54,7 +52,6 @@ Some of the tools mentioned above rely on centralized configuration files, that 
 
 - `telus-standard` (Javascript linting with our own flavour of StandardJS) - see [@telus/telus-standard][telus/telus-standard]
 - `remark` (Markdown linting) - see [@telus/remark-config][telus/remark-config]
-- `semantic-release` (automated version management and NPM publishing) - see [@telus/semantic-release-config][telus/semantic-release-config]
 
 ## <a id="step-3"></a> Usage
 
@@ -62,6 +59,12 @@ Some of the tools mentioned above rely on centralized configuration files, that 
 mkdir my-new-project
 cd my-new-project
 npm init @telus/library
+```
+
+or (automatically creates directory)
+
+```bash
+npm init @telus/library my-new-project
 ```
 
 When you run `npm init @telus/library`, you will be prompted with a few questions. Here's what you need to know to be ready:
@@ -74,11 +77,9 @@ When you run `npm init @telus/library`, you will be prompted with a few question
 - keywords
 - maintainers (Github team slug)
 
-Once you have scaffolded you library files and pushed them to a repository, you can set up your new repository with CircleCI so that it runs the configured pipeline for every push.
+Once you have scaffolded you library files and pushed them to a repository, **you have to set up the `NPM_TOKEN` inside the Github Actions workflow**, so that the workflow can automatically version and release your package to the NPM registry for you. Use the shared NPM token available in Vault (`shippy get secret npmrc-dev --common --field=npmrc`). Keep in mind that this token will sometimes get updated & you will have to update it here as well, in case you notice the workflow failing.
 
-To do that, go to [Circle CI][circle-ci-telus] and login with your Github account. Once logged in, you should be able to access the `Add projects` page, where you can search for your repository and click on `Set Up project`. In the next step, CircleCI will try to determine what OS and language your app needs (Linux/Node should be correct for most of our apps) and suggest you how to write your configuration file. Remember we already have [that](./template/circle.yml) among our scaffolded files, so just click on `Start building`.
-
-Once you have clicked on `Start building`, CircleCI will try to identify your config file and run the pipeline accordingly in your `master` branch. If no config file is found in the `master` branch, you'll see an error. However, once you make a new push to any branch and a valid config file is detected, you will see the pipeline run.
+Once you have the token at hand, you need to add it to the Github Actions workflow setup, using the Github UI. Customize the URL below to point to your repository: `https://github.com/telus/<repository-name>/edit/master/.github/main.workflow`. Have a look at the steps in the workflow. Notice the ones that have the secrets associated to them, and click on `edit` and `Enter value` to insert your token.
 
 ### What's this `npm init` magic?
 
@@ -92,13 +93,7 @@ As a result, this is what happens after you run `npm init @telus/library`:
 - The entire contents of the `template` folder (with the placeholders filled with your info) gets copied in the location where the command was run.
 - Now you can start working on your library!
 
-## <a id="step-4"></a> Local development gotchas
-
-You might notice in the template [CircleCI configuration file](./template/circle.yml) that we use a particular Docker image called `telus/build-essential` as a base image. That ensures we get access to some globally installed packages needed to run the various steps in the pipeline.
-
-In order to make these scripts work in local development, you will need to ensure you have those packages installed on your machine. Running `npx install-group peer --package @telus/build-essential --no-save` inside your project folder will make those dependencies available. For convenience, we have added a script for this inside the template `package.json`: `npm run setup-local`. This will add these packages to your local `node_modules`, however keep in mind that you will have to do this again every time you reset your `node_modules` folder (that happens when you run `npm install`).
-
-## <a id="step-5"></a> Frequently Asked Questions
+## <a id="step-4"></a> Frequently Asked Questions
 
 ### 1. How do I migrate existing libraries?
 
@@ -136,21 +131,11 @@ Long gone are the days when you had to do semantic versioning manually! With `se
 
 We recommend leaving the version as is at initialization: `"version": "0.0.0-development"`. Your NPM library consumers are encouraged to refer to the Github releases tab inside your repository or to the NPM registry page for info about published versions.
 
-### 6. Can I get Slack notifications when my library's pipeline?
+## <a id="step-5"></a> Additional guides
 
-But of course! Have a look at this [guide][circleci-slack] for instructions on how to set up CircleCI integration with Slack.
+Before you start using this initializer and the tools inside it, **please make sure you familiarize yourself with `Github Actions` and `semantic-release`**. For more information about how these work and how they were configured, please refer to the documentation below:
 
-### 7. I keep getting errors on my local when I run `npm run lint`
-
-Example: `Error: Cannot find module '@telus/remark-config'`.
-
-You probably missed the part where we talked about our centralized config packages. Have a look at [Local development gotchas](#step-4).
-
-## <a id="step-6"></a> Additional guides
-
-Before you start using this initializer and the tools inside it, **please make sure you familiarize yourself with `CircleCI` and `semantic-release`**. For more information about how these work and how they were configured, please refer to the documentation below:
-
-- [CircleCI][guides-circle-ci]
+- [Github Actions][github-actions]
 - [semantic-release][guides-semantic-release]
 
 ---
@@ -158,8 +143,6 @@ Before you start using this initializer and the tools inside it, **please make s
 > Github: [@telus](https://github.com/telus) &bull;
 > Twitter: [@telusdigital](https://twitter.com/telusdigital)
 
-[circle-url]: https://circleci.com/gh/telus/create-library
-[circle-image]: https://img.shields.io/circleci/project/github/telus/create-library/master.svg?style=for-the-badge&logo=circleci
 [npm-url]: https://www.npmjs.com/package/@telus/create-library
 [npm-image]: https://img.shields.io/npm/v/@telus/create-library.svg?style=for-the-badge&logo=npm
 [npm-library-starter-kit]: https://github.com/telus/npm-library-starter-kit
@@ -170,7 +153,7 @@ Before you start using this initializer and the tools inside it, **please make s
 [npm-audit]: https://docs.npmjs.com/cli/audit
 [updated]: https://github.com/ahmadnassri/node-updated
 [editorconfig]: https://github.com/editorconfig-checker/editorconfig-checker.javascript
-[eslint]: https://github.com/eslint/eslint
+[telus-standard]: https://github.com/telus/telus-standard
 [remark-cli]: https://github.com/remarkjs/remark/tree/master/packages/remark-cli
 [renovate]: https://github.com/renovatebot/renovate
 [telus/telus-standard]: https://github.com/telus/telus-standard
@@ -178,12 +161,9 @@ Before you start using this initializer and the tools inside it, **please make s
 [prettier]: https://prettier.io/
 [husky]: https://github.com/typicode/husky
 [lint-staged]: https://github.com/okonet/lint-staged
-[telus/semantic-release-config]: https://github.com/telus/semantic-release-config
 [github-licenses]: https://help.github.com/articles/licensing-a-repository/
-[circle-ci-telus]: https://circleci.com/add-projects/gh/telus
 [npm-init]: https://docs.npmjs.com/cli/init#description
 [ast-confluence]: https://telusdigital.atlassian.net/wiki/spaces/AST/overview
 [npm-files]: https://docs.npmjs.com/files/package.json#files
-[circleci-slack]: https://circleci.com/blog/slack-integration/
-[guides-circle-ci]: https://github.com/telus/guides/blob/master/circle-ci.md
 [guides-semantic-release]: https://github.com/telus/guides/blob/master/semantic-release.md
+[github-actions]: https://developer.github.com/actions/

@@ -37,10 +37,12 @@
     "lint:deps": "npx updated",
     "lint:ec": "npx editorconfig-checker .",
     "lint:js": "telus-standard --verbose",
-    "lint:md": "npx remark --quiet --frail .",
+    "lint:md": "npx remark-cli --quiet --frail .",
     "lint": "npx npm-run-all -p -c -l lint:*",
     "fix:js": "npm run lint:js -- --fix",
-    "format": "prettier '{,!(template)/**/}*.+(js|jsx|json|yml|yaml|css|less|scss|md|graphql|mdx)' --write"
+    "format": "prettier '{,!(template)/**/}*.+(js|jsx|json|yml|yaml|css|less|scss|md|graphql|mdx)' --write",
+    "release:dryrun": "npx semantic-release --dry-run --branch $(git describe --contains --all HEAD)",
+    "release": "npx semantic-release"
   },
   "dependencies": {
     "fast-glob": "^3.0.3",
@@ -52,9 +54,10 @@
   },
   "devDependencies": {
     "@telus/prettier-config": "^1.0.3",
+    "@telus/remark-config": "^1.2.0",
     "@telus/telus-standard": "^1.2.1",
-    "husky": "^2.7.0",
-    "lint-staged": "^8.2.1"
+    "husky": "^3.0.0",
+    "lint-staged": "^9.0.2"
   },
   "telus-standard": {
     "ignore": [
