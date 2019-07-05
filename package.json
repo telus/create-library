@@ -45,7 +45,7 @@
     "release": "npx semantic-release"
   },
   "dependencies": {
-    "fast-glob": "^3.0.3",
+    "fast-glob": "^3.0.4",
     "inquirer": "^6.4.1",
     "mkdirp": "^0.5.1",
     "spdx-license-list": "^6.0.0",
