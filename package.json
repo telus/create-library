@@ -57,7 +57,7 @@
     "@telus/remark-config": "^1.2.0",
     "@telus/telus-standard": "^1.2.1",
     "husky": "^3.0.0",
-    "lint-staged": "^9.0.2"
+    "lint-staged": "^9.1.0"
   },
   "telus-standard": {
     "ignore": [
