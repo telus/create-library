@@ -36,9 +36,10 @@ contacts:
     email: daniel.tyrala@telus.com
 
 references:
-  - title: Source Code
-    uri: https://github.com/telus/create-library
   - title: NPM Package
     uri: https://www.npmjs.com/package/@telus/create-library
 
-environments: []
+environments:
+  - type: Git
+    title: Source Code
+    uri: https://github.com/telus/create-library
