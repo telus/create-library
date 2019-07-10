@@ -36,16 +36,26 @@
     "lint:audit": "npm audit",
     "lint:deps": "npx updated",
     "lint:ec": "npx editorconfig-checker .",
-    "lint:js": "npx eslint .",
-    "lint:md": "npx remark --quiet --frail .",
-    "lint": "npx npm-run-all -p -c -l lint:*"
+    "lint:js": "telus-standard --verbose",
+    "lint:md": "npx remark-cli --quiet --frail .",
+    "lint": "npx npm-run-all -p -c -l lint:*",
+    "fix:js": "telus-standard --verbose --fix",
+    "format": "prettier '**/**.+(js|jsx|json|yml|yaml|css|less|scss|md|graphql|mdx)' --write"
   },
   "dependencies": {
-    "fast-glob": "^2.2.6",
-    "inquirer": "^6.3.1",
+    "fast-glob": "^3.0.4",
+    "inquirer": "^6.4.1",
     "mkdirp": "^0.5.1",
     "spdx-license-list": "^6.0.0",
     "validate-npm-package-name": "^3.0.0",
-    "yargs": "^13.2.2"
+    "yargs": "^13.2.4"
+  },
+  "devDependencies": {
+    "@telus/prettier-config": "^1.0.3",
+    "@telus/remark-config": "^1.2.0",
+    "@telus/telus-standard": "^1.2.1"
+  },
+  "telus-standard": {
+    "ignore": ["template"]
   }
 }
