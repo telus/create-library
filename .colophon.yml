@@ -28,10 +28,12 @@ contacts:
     email: kyle.spaans@telus.com
     github: kspaans
 
+references:
+  - title: NPM Package
+    uri: https://www.npmjs.com/package/@telus/create-library
+
+
 environments:
   - type: git
     title: Source Code
     uri: https://github.com/telus/create-library
-  - type: npm
-    title: NPM Package
-    uri: https://www.npmjs.com/package/@telus/create-library
