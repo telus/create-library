@@ -42,7 +42,6 @@ references:
   - title: NPM Package
     uri: https://www.npmjs.com/package/@telus/create-library
 
-
 environments:
   - type: git
     title: Source Code
