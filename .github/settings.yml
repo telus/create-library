@@ -14,7 +14,7 @@ repository:
   allow_rebase_merge: true
 
 teams:
-  - name: architecture-support
+  - name: platform-technology-tools
     permission: admin
 
 branches:
@@ -27,7 +27,7 @@ branches:
         dismissal_restrictions:
           users: []
           teams:
-            - architecture-support
+            - platform-technology-tools
 
       required_status_checks:
         strict: true
@@ -37,7 +37,7 @@ branches:
       restrictions:
         users: []
         teams:
-          - architecture-support
+          - platform-technology-tools
 
 labels:
   - name: bug
