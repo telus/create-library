@@ -1,5 +1,7 @@
 # NPM Library Initializer
 
+TEST
+ 
 [![version][npm-image]][npm-url]
 
 An opinionated [npm package initializer][npm-init]. Scaffolds an npm library tree with fully configured CI automation, using a predefined [template](./template).
