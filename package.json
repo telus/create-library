@@ -50,7 +50,7 @@
     "mkdirp": "^0.5.1",
     "spdx-license-list": "^6.0.0",
     "validate-npm-package-name": "^3.0.0",
-    "yargs": "^13.3.0"
+    "yargs": "^14.0.0"
   },
   "devDependencies": {
     "@telus/prettier-config": "^1.0.3",
