@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "fast-glob": "^3.0.4",
-    "inquirer": "^6.5.0",
+    "inquirer": "^7.0.0",
     "mkdirp": "^0.5.1",
     "spdx-license-list": "^6.0.0",
     "validate-npm-package-name": "^3.0.0",
