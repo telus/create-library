@@ -9,9 +9,9 @@
   },
   "license": "[license]",
   "main": "index.js",
-  "keywords": [keywords],
+  "keywords": "[keywords]",
   "engines": {
-    "node": ">=8"
+    "node": ">=12"
   },
   "files": [
     "lib",
