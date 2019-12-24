@@ -16,19 +16,15 @@ contacts:
     email: mauricio.mercado@telus.com
     github: maumercado
   - type: developer
-    name: Bill Li
-    email: bill.li@telus.com
-    github: billxinli
-  - type: developer
-    name: Matt Seburn
-    email: matt.seburn@telus.com
-    github: mattseburn
-  - type: Product Owner
-    name: Dan Tyrala
-    email: daniel.tyrala@telus.com
+    name: Matthew Cantelon
+    email: matthew.cantelon@telus.com
+    github: mattcan
   - type: Product Owner
     name: Katarina Sokach
     email: katarina.sokach@telus.com
+  - type: Tech Lead
+    name: Stephen Marie-Rhodes
+    email: stephen.marie-rhodes@telus.com
 
 references:
   - title: NPM Package
