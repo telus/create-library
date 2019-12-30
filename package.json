@@ -34,7 +34,6 @@
   },
   "scripts": {
     "lint:audit": "npm audit",
-    "lint:deps": "npx updated",
     "lint:ec": "npx editorconfig-checker .",
     "lint:js": "telus-standard --verbose",
     "lint:md": "npx remark-cli --quiet --frail .",
