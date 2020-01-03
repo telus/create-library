@@ -77,7 +77,7 @@ When you run `npm init @telus/library`, you will be prompted with a few question
 - keywords
 - maintainers (Github team slug)
 
-Once you have scaffolded you library files and pushed them to a repository, **you have to set up the `NPM_TOKEN` inside the Github Actions workflow**, so that the workflow can automatically version and release your package to the NPM registry for you. Use the shared NPM token available in Vault (`shippy get secret npmrc-dev --common --field=npmrc`, extract what comes after `authToken=`). Keep in mind that this token will sometimes get updated & you will have to update it here as well, in case you notice the workflow failing.
+Once you have scaffolded you library files and pushed them to a repository, **you have to set up the `NPM_AUTH_TOKEN` inside the Github Actions workflow**, so that the workflow can automatically version and release your package to the NPM registry for you. Use the shared NPM token available in Vault (`shippy get secret npmrc-dev --common --field=npmrc`, extract what comes after `authToken=`). Keep in mind that this token will sometimes get updated & you will have to update it here as well, in case you notice the workflow failing.
 
 Once you have the token at hand, you need to add it to the Github Actions workflow setup, using the Github UI. Customize the URL below to point to your repository: `https://github.com/telus/<repository-name>/edit/master/.github/main.workflow`. Have a look at the steps in the workflow. Notice the ones that have the secrets associated to them, and click on `edit` and `Enter value` to insert your token.
 
