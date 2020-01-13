@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@telus/prettier-config": "^1.0.3",
-    "@telus/telus-standard": "^1.2.1",
+    "@telus/telus-standard": "^2.0.0",
     "@telus/remark-config": "^1.2.0",
     "husky": "^3.0.0",
     "lint-staged": "^9.0.2",
