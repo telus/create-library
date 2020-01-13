@@ -79,11 +79,11 @@ When you run `npm init @telus/library`, you will be prompted with a few question
 
 Once you have scaffolded your library files and pushed them to a repository **you have to set up the `NPM_AUTH_TOKEN` secret** so that the workflow can automatically version and release your package to the NPM registry for you. In order to access the shared NPM token, you will need to be onboarded to `shippy`. Please contact the relevant teams in order to do so. Once you have access:
 
-1. Login to `shippy` on the command line
+1. Login to `shippy` on the command line:
     ```sh
     shippy login
     ```
-2. Download the shared token
+2. Download the shared token:
     ```sh
     shippy get secret npmrc-dev --common --field=npmrc | sed 's,//registry.npmjs.org/:_authToken=,,'
     ```
