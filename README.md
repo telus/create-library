@@ -77,7 +77,25 @@ When you run `npm init @telus/library`, you will be prompted with a few question
 - keywords
 - maintainers (Github team slug)
 
-Once you have scaffolded you library files and pushed them to a repository, **you have to set up the `NPM_TOKEN` inside the Github Actions workflow**, so that the workflow can automatically version and release your package to the NPM registry for you. Use the shared NPM token available in Vault (`shippy get secret npmrc-dev --common --field=npmrc`, extract what comes after `authToken=`). Keep in mind that this token will sometimes get updated & you will have to update it here as well, in case you notice the workflow failing.
+Once you have scaffolded your library files and pushed them to a repository **you have to set up the `NPM_AUTH_TOKEN` secret** so that the workflow can automatically version and release your package to the NPM registry for you. In order to access the shared NPM token, you will need to be onboarded to `shippy`. Please contact the relevant teams in order to do so. Once you have access:
+
+1. Login to `shippy` on the command line:
+
+```sh
+shippy login
+```
+
+2. Download the shared token:
+
+```sh
+shippy get secret npmrc-dev --common --field=npmrc | sed 's,//registry.npmjs.org/:_authToken=,,'
+```
+
+3. Take the result of the above command and save it as the value for the `NPM_AUTH_TOKEN` secret in your project
+
+On rare occasions, the shared NPM token is changed which means you will need to update your secret when that occurs.
+
+If you haven't created secrets before, please review the [Github documentation on secret creation](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets#creating-encrypted-secrets)
 
 Once you have the token at hand, you need to add it to the Github Actions workflow setup, using the Github UI. Customize the URL below to point to your repository: `https://github.com/telus/<repository-name>/edit/master/.github/main.workflow`. Have a look at the steps in the workflow. Notice the ones that have the secrets associated to them, and click on `edit` and `Enter value` to insert your token.
 
