@@ -6,37 +6,19 @@ about:
   title: create-library
   description: An opinionated NPM Package initializer
 
-contacts:
-  - type: Project Manager
-    name: Natasha Lander
-    email: natasha.lander@telus.com
-    github: NatashaLander
-  - type: developer
-    name: Mauricio Mercado
-    email: mauricio.mercado@telus.com
-    github: maumercado
-  - type: developer
-    name: Samantha Vale
-    email: samantha.bezerra_vale@telus.com
-    github: karlasamantha
-  - type: developer
-    name: Ruxandra Fediuc
-    email: ruxandra.fediuc@telus.com
-    github: ruxandrafed
-  - type: developer
-    name: Bill Li
-    email: bill.li@telus.com
-    github: billxinli
-  - type: developer
-    name: Matt Seburn
-    email: matt.seburn@telus.com
-    github: mattseburn
-  - type: Product Owner
-    name: Dan Tyrala
-    email: daniel.tyrala@telus.com
-  - type: Product Owner
-    name: Katarina Sokach
-    email: katarina.sokach@telus.com
+  contacts:
+    - type: Product Owner
+      name: Stephen Marie-Rhodes
+      email: Stephen.Marie-Rhodes@telus.com
+      github: stepmr
+    - type: Tech Lead
+      name: Mauricio Mercado
+      email: mauricio.mercado@telus.com
+      github: maumercado
+    - type: Architect
+      name: Matthew Cantelon
+      email: matthew.cantelon@telus.com
+      github: mattcan
 
 references:
   - title: NPM Package
