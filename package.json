@@ -44,20 +44,20 @@
     "release": "npx semantic-release"
   },
   "dependencies": {
-    "fast-glob": "^3.1.1",
-    "inquirer": "^7.0.1",
-    "mkdirp": "^0.5.1",
+    "fast-glob": "^3.2.2",
+    "inquirer": "^7.1.0",
+    "mkdirp": "^1.0.4",
     "spdx-license-list": "^6.1.0",
     "validate-npm-package-name": "^3.0.0",
-    "yargs": "^15.0.2"
+    "yargs": "^15.3.1"
   },
   "devDependencies": {
     "@telus/prettier-config": "^1.0.3",
     "@telus/remark-config": "^1.2.0",
-    "@telus/telus-standard": "^1.3.2",
+    "@telus/telus-standard": "^2.0.3",
     "editorconfig-checker": "^2.2.0",
-    "husky": "^3.1.0",
-    "lint-staged": "^9.5.0"
+    "husky": "^4.2.3",
+    "lint-staged": "^10.1.2"
   },
   "telus-standard": {
     "ignore": [
