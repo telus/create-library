@@ -42,7 +42,6 @@ This NPM library initializer is a CLI tool that makes the process of creating an
 - Automated version management and NPM package publishing using [semantic-release][semantic-release], that uses formalized commit message convention to document changes in the codebase
 - Basic setup for unit tests with [tap][tap]
 - Security auditing using [npm audit][npm-audit]
-- Dependencies auditing using [updated][updated], and a command to automatically install updates
 - `.editorconfig` linting using [editorconfig-checker][editorconfig]
 - Javascript linting using [telus-standard][telus-standard], and a command to automatically fix most small issues
 - Markdown linting for your README files using [remark-cli][remark-cli], and a command to automatically fix most small issues
@@ -58,6 +57,7 @@ Some of the tools mentioned above rely on centralized configuration files, that 
 ```bash
 mkdir my-new-project
 cd my-new-project
+git init
 npm init @telus/library
 ```
 
@@ -65,6 +65,9 @@ or (automatically creates directory)
 
 ```bash
 npm init @telus/library my-new-project
+cd my-new-project
+git init
+npm init @telus/library
 ```
 
 When you run `npm init @telus/library`, you will be prompted with a few questions. Here's what you need to know to be ready:
@@ -141,7 +144,7 @@ Configure `babel` and your build script(s) as needed. Then consider the followin
 Probably because the `lint` job fails! There are a few kinds of linting we have included with this template, and you should expect some of these to occasionally fail even if you didn't make any changes to the code. Here's why:
 
 - We are linting for security vulnerabilities using `npm audit`. The dependencies you use might be ok today, but not tomorrow if a security issue is discovered!
-- We are linting for outdated dependencies, because we believe this will encourage our devs to keep their apps dependencies up-to-date! The more dependencies you have, the higher the likelihood for those to be updated and hence cause your pipeline to fail. Refer to the [updated][updated] docs for more details and usage options.
+- We are linting for outdated dependencies, because we believe this will encourage our devs to keep their apps dependencies up-to-date! The more dependencies you have, the higher the likelihood for those to be updated and hence cause your pipeline to fail.
 
 ### 5. Why doesn't the version inside `package.json` get updated?
 
@@ -169,7 +172,6 @@ Before you start using this initializer and the tools inside it, **please make s
 [semantic-release]: https://github.com/semantic-release/semantic-release
 [tap]: https://github.com/tapjs/node-tap
 [npm-audit]: https://docs.npmjs.com/cli/audit
-[updated]: https://github.com/ahmadnassri/node-updated
 [editorconfig]: https://github.com/editorconfig-checker/editorconfig-checker.javascript
 [telus-standard]: https://github.com/telus/telus-standard
 [remark-cli]: https://github.com/remarkjs/remark/tree/master/packages/remark-cli

@@ -54,7 +54,7 @@
     "@telus/prettier-config": "^1.0.3",
     "@telus/remark-config": "^1.2.0",
     "@telus/telus-standard": "^2.0.3",
-    "editorconfig-checker": "^2.2.0",
+    "editorconfig-checker": "^1.3.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.1.2"
   },
