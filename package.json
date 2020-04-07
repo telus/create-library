@@ -27,6 +27,7 @@
   "files": [
     "lib",
     "template",
+    "template/*",
     "index.js"
   ],
   "bugs": {
