@@ -14,6 +14,10 @@
   },
   "license": "MIT",
   "bin": "index.js",
+  "files": [
+    "template",
+    "lib"
+  ],
   "keywords": [
     "telus",
     "init",
@@ -24,12 +28,6 @@
   "engines": {
     "node": ">=12"
   },
-  "files": [
-    "lib",
-    "template",
-    "template/*",
-    "index.js"
-  ],
   "bugs": {
     "url": "https://github.com/telus/create-library/issues"
   },
