@@ -57,8 +57,9 @@ Some of the tools mentioned above rely on centralized configuration files, that 
 ```bash
 mkdir my-new-project
 cd my-new-project
-git init
 npm init @telus/library
+git init
+npm install
 ```
 
 or (automatically creates directory)
@@ -67,7 +68,7 @@ or (automatically creates directory)
 npm init @telus/library my-new-project
 cd my-new-project
 git init
-npm init @telus/library
+npm install
 ```
 
 When you run `npm init @telus/library`, you will be prompted with a few questions. Here's what you need to know to be ready:
