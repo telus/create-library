@@ -23,7 +23,6 @@
   "scripts": {
     "coverage": "opener coverage/lcov-report/index.html",
     "lint:audit": "npm audit",
-    "lint:deps": "npx updated",
     "lint:ec": "editorconfig-checker .",
     "lint:js": "telus-standard --verbose",
     "lint:md": "npx remark-cli --quiet --frail .",
@@ -44,6 +43,6 @@
     "editorconfig-checker": "^2.2.0",
     "husky": "^4.2.3",
     "lint-staged": "^10.1.2",
-    "tap": "^14.10.17"
+    "tap": "^14.10.7"
   }
 }
