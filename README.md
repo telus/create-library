@@ -145,7 +145,6 @@ Configure `babel` and your build script(s) as needed. Then consider the followin
 Probably because the `lint` job fails! There are a few kinds of linting we have included with this template, and you should expect some of these to occasionally fail even if you didn't make any changes to the code. Here's why:
 
 - We are linting for security vulnerabilities using `npm audit`. The dependencies you use might be ok today, but not tomorrow if a security issue is discovered!
-- We are linting for outdated dependencies, because we believe this will encourage our devs to keep their apps dependencies up-to-date! The more dependencies you have, the higher the likelihood for those to be updated and hence cause your pipeline to fail.
 
 ### 5. Why doesn't the version inside `package.json` get updated?
 
