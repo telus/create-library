@@ -48,7 +48,7 @@
     "mkdirp": "^1.0.4",
     "spdx-license-list": "^6.3.0",
     "validate-npm-package-name": "^3.0.0",
-    "yargs": "^16.0.3"
+    "yargs": "^16.1.0"
   },
   "devDependencies": {
     "@telus/prettier-config": "^1.0.3",
@@ -56,7 +56,7 @@
     "@telus/telus-standard": "^2.0.4",
     "editorconfig-checker": "^2.2.0",
     "husky": "^4.3.0",
-    "lint-staged": "^10.4.0"
+    "lint-staged": "^10.5.1"
   },
   "telus-standard": {
     "ignore": [
