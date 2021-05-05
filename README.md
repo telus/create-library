@@ -30,7 +30,7 @@ Here are some of the principles and concepts we have based this on:
 ## <a id="step-1"></a> Requirements
 
 - `npm >= 6.x`
-- `node >= 12.*`
+- `node >= 14.*`
 
 ## <a id="step-2"></a> What's included?
 

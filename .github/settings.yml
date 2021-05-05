@@ -16,6 +16,8 @@ repository:
 teams:
   - name: platform-technology-tools
     permission: admin
+  - name: ptt-ti
+    permission: maintain
 
 branches:
   - name: master
@@ -28,6 +30,7 @@ branches:
           users: []
           teams:
             - platform-technology-tools
+            - ptt-ti
 
       required_status_checks:
         strict: true
@@ -38,6 +41,7 @@ branches:
         users: []
         teams:
           - platform-technology-tools
+          - ptt-ti
 
 labels:
   - name: bug
@@ -64,7 +68,7 @@ labels:
     description: New feature or request
     color: 5EBEFF
 
-  - name: optimizaiton
+  - name: optimization
     description: Performance or Code Optimization
     color: 5EBEFF
 
