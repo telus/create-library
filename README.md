@@ -25,7 +25,7 @@ Here are some of the principles and concepts we have based this on:
 - Automation of the package release workflow is made possible by following _formalized git commit conventions_, more specifically [angular-commit-conventions][angular-commit-conventions]. This removes the immediate connection between human emotions and version numbers, strictly following the Semantic Versioning specs. Please refer to our [semantic-release][guides-semantic-release] guide for more details about how this works.
 - We are fans of _configuration as code_, which is why we are taking advantage of Github's [Probot][probot-settings] framework to store the repository settings as [code](./.github/settings.yml). Please review these and configure as needed. We encourage the practice of squashing commits and keeping a clean commit history (without standard merge commits cluttering the history). If squashing commits is a practice your team chooses to use, you will have the responsibility to ensure that the squashed commit message follows the Angular commit conventions and captures all included changes correctly.
 - We believe there is a lot of value in having _consistent code style_ across all of our projects, which is why we have centralized the configuration of our code quality and style checking tools in external libraries, such as [@telus/telus-standard][telus/telus-standard], [@telus/remark-config][telus/remark-config], etc. We encourage teams to use our centralized config packages and not override particular rules; our configuration is open to suggestions to contributions (feel free to add issues and/or open PRs in the repositories of the above mentioned packages).
-- We believe in automation and in _leveraging automated code formatters_ such as [prettier][prettier]. The scaffolded library will be configured out of the box to automatically format all the staged files when the user commits. For that, we are using [husky][husky] and [lint-staged][lint-staged] to configure the pre-commit hook and restrict the formatting to the staged files that are part of the commit.
+- We believe in automation and in _leveraging automated code formatters_ such as [prettier][prettier]. The scaffolded library will be configured out of the box to automatically format all the staged files when the user commits. For that, we are using [husky][husky] to configure the pre-commit hook and restrict the formatting to the staged files that are part of the commit.
 
 ## <a id="step-1"></a> Requirements
 
@@ -180,7 +180,6 @@ Before you start using this initializer and the tools inside it, **please make s
 [telus/remark-config]: https://github.com/telus/remark-config
 [prettier]: https://prettier.io/
 [husky]: https://github.com/typicode/husky
-[lint-staged]: https://github.com/okonet/lint-staged
 [github-licenses]: https://help.github.com/articles/licensing-a-repository/
 [npm-init]: https://docs.npmjs.com/cli/init#description
 [ast-confluence]: https://telusdigital.atlassian.net/wiki/spaces/AST/overview
