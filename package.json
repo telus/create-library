@@ -1,6 +1,6 @@
 {
   "version": "0.0.0-development",
-  "name": "@telus/create-library",
+  "name": "@test/create-library",
   "description": "an opinionated npm package initializer",
   "author": "Ahmad Nassri <ahmad.nassri@telus.com>",
   "contributors": [
@@ -26,7 +26,7 @@
     "initializer"
   ],
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "bugs": {
     "url": "https://github.com/telus/create-library/issues"
@@ -43,12 +43,12 @@
     "release": "npx semantic-release"
   },
   "dependencies": {
-    "fast-glob": "^3.2.4",
-    "inquirer": "^7.3.3",
+    "fast-glob": "^3.2.5",
+    "inquirer": "^8.0.0",
     "mkdirp": "^1.0.4",
-    "spdx-license-list": "^6.3.0",
+    "spdx-license-list": "^6.4.0",
     "validate-npm-package-name": "^3.0.0",
-    "yargs": "^16.1.0"
+    "yargs": "^17.0.1"
   },
   "devDependencies": {
     "@telus/prettier-config": "^1.0.3",
