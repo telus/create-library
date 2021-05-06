@@ -37,6 +37,7 @@
     "release": "npx semantic-release"
   },
   "devDependencies": {
+    "tap": "^15.0.6",
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-angular": "^12.1.1",
     "@telus/prettier-config": "^2.0.0",
