@@ -20,7 +20,7 @@ jobs:
           node-version: 14
 
       - name: Install deps
-        run: npm i
+        run: npm install
 
       - name: Publish package
         env:
