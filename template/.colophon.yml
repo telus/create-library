@@ -1,0 +1,23 @@
+version: 4.0
+
+id: [name]
+uid: [uid]
+
+about:
+  title: [title]
+  description: [description]
+
+contacts:
+  - type: Project Owner
+    name: [name]
+    email: [email]
+
+references:
+  - title: git
+    description: Source Code
+    uri: https://github.com/telus/[name].git
+
+environments:
+  - type: git
+    title: NPM Package
+    uri: https://www.npmjs.com/package/@telus/[name]
