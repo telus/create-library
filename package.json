@@ -54,7 +54,7 @@
   "devDependencies": {
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-angular": "^12.1.1",
-    "@telus/prettier-config": "^2.0.0",
+    "@telus/prettier-config": "^3.0.0",
     "@telus/remark-config": "^2.0.0",
     "@telus/semantic-release-config": "^2.0.0",
     "@telus/telus-standard": "^3.0.0",
