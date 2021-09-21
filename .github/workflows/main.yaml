@@ -1,0 +1,41 @@
+name: Publish TechDocs Site
+'on':
+  push:
+    branches:
+      - master
+    paths:
+      - docs/**
+      - .github/workflows/main.yaml
+      - '**.md'
+jobs:
+  publish-techdocs-site:
+    runs-on: ubuntu-latest
+    env:
+      ENTITY_NAME: npm-library-initializer
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9.1
+      - uses: google-github-actions/setup-gcloud@v0.2.1
+        with:
+          version: 290.0.1
+          project_id: ${{ secrets.SIMPLIFY_HUB_GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.SIMPLIFY_HUB_GCP_SA_KEY }}
+          export_default_credentials: true
+      - uses: cloudbees/plantuml-github-action@master
+      - name: Get techdocs guide github actions
+        uses: actions/checkout@v2
+        with:
+          repository: telus/techdocs-common-files
+          ref: main
+          token: ${{ secrets.SIMPLIFY_HUB_GITHUB_TOKEN }}
+          path: common-files
+      - name: Techdocs guide building
+        uses: ./common-files/actions/guides
+        with:
+          github-token: ${{ secrets.SIMPLIFY_HUB_GITHUB_TOKEN }}
