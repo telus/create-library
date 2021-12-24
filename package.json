@@ -33,7 +33,6 @@
   },
   "scripts": {
     "lint:audit": "npx audit-ci@4.1.0 --config .audit-ci.json",
-    "lint:deps": "npx updated --ignore=husky",
     "lint:ec": "editorconfig-checker",
     "lint:js": "npx @telus/telus-standard --verbose",
     "lint:md": "npx remark-cli --quiet --frail .",
@@ -49,14 +48,14 @@
     "mkdirp": "^1.0.4",
     "spdx-license-list": "^6.4.0",
     "validate-npm-package-name": "^3.0.0",
-    "yargs": "^17.2.1"
+    "yargs": "^17.3.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.1",
     "@commitlint/config-angular": "^13.2.0",
-    "@telus/prettier-config": "^3.0.3",
-    "@telus/remark-config": "^2.0.3",
-    "@telus/semantic-release-config": "^2.0.3",
+    "@telus/prettier-config": "^3.0.4",
+    "@telus/remark-config": "^2.0.4",
+    "@telus/semantic-release-config": "^2.0.4",
     "editorconfig-checker": "^4.0.2",
     "husky": "^4.3.8",
     "npm-run-all": "^4.1.5"
