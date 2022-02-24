@@ -9,9 +9,7 @@
   },
   "license": "[license]",
   "main": "index.js",
-  "keywords": [
-    "keywords"
-  ],
+  "keywords": "[keywords]",
   "engines": {
     "node": ">=14"
   },
