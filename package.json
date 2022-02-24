@@ -53,9 +53,9 @@
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
     "@commitlint/config-angular": "^16.0.0",
-    "@telus/prettier-config": "^3.0.5",
-    "@telus/remark-config": "^2.0.5",
-    "@telus/semantic-release-config": "^2.0.5",
+    "@telus/prettier-config": "^3.0.6",
+    "@telus/remark-config": "^2.0.6",
+    "@telus/semantic-release-config": "^2.0.6",
     "editorconfig-checker": "^4.0.2",
     "husky": "^4.3.8",
     "npm-run-all": "^4.1.5"
