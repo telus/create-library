@@ -8,6 +8,9 @@ on:
 jobs:
   publish:
     name: Publish package
+    permissions:
+      contents: read
+      packages: write
     runs-on: ubuntu-latest
 
     steps:
@@ -22,8 +25,18 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      - name: Publish package
+      - name: Publish package to npmjs.org
         env:
           NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npx semantic-release
+
+      - name: Setup Github credentials for Github Packages access
+        run: |
+          echo @telus:https://npm.pkg.github.com/ > .npmrc
+          echo '//npm.pkg.github.com/:_authToken=${NPM_TOKEN}' >> .npmrc
+
+      - name: Publish package to Github Packages
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
