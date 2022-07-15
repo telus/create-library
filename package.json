@@ -32,7 +32,7 @@
     "url": "https://github.com/telus/create-library/issues"
   },
   "scripts": {
-    "lint:audit": "npx audit-ci@4.1.0 --config .audit-ci.json",
+    "lint:audit": "npx audit-ci@6.3.0 --config .audit-ci.jsonc",
     "lint:ec": "editorconfig-checker",
     "lint:js": "npx @telus/telus-standard --verbose",
     "lint:md": "npx remark-cli --quiet --frail .",
