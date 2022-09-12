@@ -14,7 +14,7 @@ jobs:
       ENTITY_NAME: npm-library-initializer
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v2
@@ -29,7 +29,7 @@ jobs:
           export_default_credentials: true
       - uses: cloudbees/plantuml-github-action@master
       - name: Get techdocs guide github actions
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: telus/techdocs-common-files
           ref: main
