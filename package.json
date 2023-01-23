@@ -45,7 +45,7 @@
   "dependencies": {
     "fast-glob": "^3.2.12",
     "inquirer": "^8.2.3",
-    "mkdirp": "^1.0.4",
+    "mkdirp": "^2.0.0",
     "spdx-license-list": "^6.6.0",
     "validate-npm-package-name": "^3.0.0",
     "yargs": "^17.6.2"
