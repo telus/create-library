@@ -5,10 +5,16 @@ metadata:
   description: An opinionated NPM Package initializer
   tags:
     - node
+    - github-actions
+    - workflows
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/name=create-library
     backstage.io/techdocs-ref: dir:docs
     github.com/project-slug: telus/create-library
+    telus.com/vp: harry.mcintosh@telus.com
+    telus.com/director: steve.tannock@telus.com
+    telus.com/manager: stephen.marie-rhodes@telus.com
+    telus.com/maintainer: valentin.prugnaud@telus.com
   links:
     - url: https://github.com/telus/create-library
       title: Website
