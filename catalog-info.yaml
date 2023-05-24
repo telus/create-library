@@ -2,13 +2,17 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: create-library
-  description: An opinionated NPM Package initializer
+  description: An opinionated NPM Package starter kit
   tags:
     - node
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/name=create-library
     backstage.io/techdocs-ref: dir:docs
     github.com/project-slug: telus/create-library
+    telus.com/vp: harry.mcintosh@telus.com
+    telus.com/director: steve.tannock@telus.com
+    telus.com/manager: stephen.marie-rhodes@telus.com
+    telus.com/maintainer: valentin.prugnaud@telus.com
   links:
     - url: https://github.com/telus/create-library
       title: Website
