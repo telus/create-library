@@ -39,7 +39,8 @@
     "fix:js": "npm run lint:js -- --fix",
     "format": "prettier '{,!(template)/**/}*.+(js|jsx|json|yml|yaml|css|less|scss|md|graphql|mdx)' --write",
     "release:dryrun": "npx semantic-release --dry-run --branch $(git describe --contains --all HEAD)",
-    "release": "npx semantic-release"
+    "release": "npx semantic-release",
+    "prepare": "husky install"
   },
   "dependencies": {
     "fast-glob": "^3.2.12",
@@ -58,7 +59,7 @@
     "@telus/telus-standard": "^4.1.0",
     "audit-ci": "^6.6.1",
     "editorconfig-checker": "^5.0.1",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "npm-run-all": "^4.1.5"
   },
   "telus-standard": {
