@@ -32,10 +32,9 @@
     "url": "https://github.com/telus/create-library/issues"
   },
   "scripts": {
-    "lint:audit": "npx audit-ci@6.3.0 --config .audit-ci.jsonc",
+    "lint:audit": "npx audit-ci --config .audit-ci.jsonc",
     "lint:ec": "editorconfig-checker",
     "lint:js": "npx @telus/telus-standard --verbose",
-    "lint:md": "npx remark-cli --quiet --frail .",
     "lint": "npm-run-all -p -c -l lint:*",
     "fix:js": "npm run lint:js -- --fix",
     "format": "prettier '{,!(template)/**/}*.+(js|jsx|json|yml|yaml|css|less|scss|md|graphql|mdx)' --write",
@@ -44,20 +43,22 @@
   },
   "dependencies": {
     "fast-glob": "^3.2.12",
-    "inquirer": "^8.2.3",
-    "mkdirp": "^1.0.4",
+    "inquirer": "^9.2.6",
+    "mkdirp": "^3.0.1",
     "spdx-license-list": "^6.6.0",
-    "validate-npm-package-name": "^3.0.0",
-    "yargs": "^17.6.2"
+    "validate-npm-package-name": "^5.0.0",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.3.0",
-    "@commitlint/config-angular": "^17.3.0",
-    "@telus/prettier-config": "^3.2.4",
-    "@telus/remark-config": "^2.2.5",
-    "@telus/semantic-release-config": "^2.2.5",
-    "editorconfig-checker": "^4.0.2",
-    "husky": "^4.3.8",
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@telus/prettier-config": "^3.3.0",
+    "@telus/remark-config": "^2.3.0",
+    "@telus/semantic-release-config": "^2.4.0",
+    "@telus/telus-standard": "^4.1.0",
+    "audit-ci": "^6.6.1",
+    "editorconfig-checker": "^5.0.1",
+    "husky": "^8.0.3",
     "npm-run-all": "^4.1.5"
   },
   "telus-standard": {
