@@ -1,1 +1,0 @@
-- [Using the npm Library Initializer](README.md)

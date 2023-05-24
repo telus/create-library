@@ -7,7 +7,7 @@ metadata:
     - node
   annotations:
     backstage.io/kubernetes-label-selector: app.kubernetes.io/name=create-library
-    backstage.io/techdocs-ref: dir:docs
+    backstage.io/techdocs-ref: dir:.
     github.com/project-slug: telus/create-library
     telus.com/vp: harry.mcintosh@telus.com
     telus.com/director: steve.tannock@telus.com

@@ -2,5 +2,8 @@ site_name: create-library
 site_description: Documentation for create-library
 plugins:
   - techdocs-core
+  - same-dir
 nav:
-  - NAV: NAV.md
+  - Overview: README.md
+
+docs_dir: .
