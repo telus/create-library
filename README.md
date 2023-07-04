@@ -31,8 +31,8 @@ Here are some of the principles and concepts we have based this on:
 
 ## <a id="step-1"></a> Requirements
 
-- `npm >= 6.x`
-- `node >= 14.*`
+- `npm >= 8.x`
+- `node >= 16.*`
 
 ## <a id="step-2"></a> What's included?
 
