@@ -1,5 +1,5 @@
 {
   "moderate": true,
-  "allowlist": [],
+  "allowlist": ["GHSA-c2qf-rxjj-qqgw"],
   "registry": "https://registry.npmjs.org"
 }
